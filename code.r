@@ -73,7 +73,16 @@ View(b1_k)
 library(ggplot2)
 View(df2)
 View(df3)
-# Create relationship
+# Create relationship for the linear model
 ml_m<-lm(sales~youtube+facebook+newspaper, data=df)
+#View Coefficients
 print(ml_m)
+#View summary Statistics
 summary(ml_m)
+#Plot the model
+plot(ml_m)
+# Create another Scatterplot
+ggplot(data=df, aes(x=newspaper+youtube+facebook, y=sales))+geom_point(color="green")+geom_smooth(method="lm")
+#ANOVA
+aov(ml_m)
+
