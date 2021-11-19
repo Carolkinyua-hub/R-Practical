@@ -11,8 +11,7 @@ Statistical Analysis into the impact of; Digital Advertising on Facebook, Youtub
 * To clone the repository using HTTPS, under "Clone with HTTPS".
 * Open Terminal.Change the current working directory to the location where you want the cloned directory.
 * Type git clone, and then paste the URL you copied earlier.
-$ git clone https://github.com/Carolkinyua-hub/Names.git
-
+$ git clone https://github.com/Carolkinyua-hub/R-Practical.git
 ## Known Bugs
 
 ## Technologies Used
