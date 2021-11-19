@@ -57,3 +57,5 @@ View(X2_T)
 #Computing Xt times X
 X_new<-X2_T %*% X2
 View(X_new)
+# Computing the inverse
+
