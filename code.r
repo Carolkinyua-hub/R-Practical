@@ -68,3 +68,5 @@ View(Xinv)
 X2T_Y<-X2_T %*% Y
 View(X2T_Y)
 # compute OLS B1-Bk
+b1_k<-Xinv%*%X2T_Y
+View(b1_k)
