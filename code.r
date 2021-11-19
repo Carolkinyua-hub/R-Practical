@@ -28,16 +28,22 @@ lm_N<-ggplot(data=df, aes(x=newspaper, y=sales))+geom_point(color="green")+geom_
 # Computing multiple linear regression coefficients
 ls()
 View(df)
+head(df)
 library(dplyr)
 # remove sales in order to form X matrix
 df2<-select(df,-sales)
 View(df2)
+head(df2)
 #X Converting the dataframe into the X matrix 
 X<-data.matrix(df2)
 View(df2)
+head(df2)
+max(df2)
 #Creating the Response Variable
 df3<-select(df, -facebook,-youtube,-newspaper)
 View(df3)
+head(df3)
+max(df3)
 # converting Df3 to Y matrix
 Y<-data.matrix(df3)
 View(df3)
@@ -85,4 +91,6 @@ plot(ml_m)
 ggplot(data=df, aes(x=newspaper+youtube+facebook, y=sales))+geom_point(color="green")+geom_smooth(method="lm")
 #ANOVA
 aov(ml_m)
-
+help(package="ggplot2")
+# Run ggbin
+ggplot(data=df, aes(x=newspaper+youtube+facebook, y=sales))+geom_bin_2d(mapping = NULL,data = NULL,stat = "bin2d",position = "identity")+geom_smooth(method="lm")
