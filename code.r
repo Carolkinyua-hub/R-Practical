@@ -12,18 +12,18 @@ View(df)
 library(ggplot2)
 View(df)
 # Re-installing tidyverse for analysis purposes
-install.packages("tidyverse" , dependencies = "TRUE")
+install.packages("tidyverse" , Dependencies = "TRUE")
 # Accessing tidyverse
 library(tidyverse)
 # Accessing(dplyr)
 library(dplyr)
 # visualizing the impact of facebook activity to sales
-ggplot(data=df, aes(x=facebook, y=sales))+ geom_point()+geom_smooth(method="lm")
+lm_F<-ggplot(data=df, aes(x=facebook, y=sales))+geom_point(color="blue")+geom_smooth(method="lm")
+# linear model summary of sales based off facebook data
+summary()
 # visualizing the impact of youtube activity to sales
-ggplot(data=df, aes(x=youtube, y=sales))+ geom_point()+geom_smooth(method="lm")
+lm_Y<-ggplot(data=df, aes(x=youtube, y=sales))+ geom_point(color="red")+geom_smooth(method="lm")
 # visualizing the impact of newspaper ads on sales
-ggplot(data=df, aes(x=newspaper, y=sales))+geom_point()+geom_smooth(method="lm")
-# Running multiple regression based of the 3 variables and their impact on sales
-ggplt(data=df)
+lm_N<-ggplot(data=df, aes(x=newspaper, y=sales))+geom_point(color="green")+geom_smooth(method="lm")
 
 
