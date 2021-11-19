@@ -70,3 +70,10 @@ View(X2T_Y)
 # compute OLS B1-Bk
 b1_k<-Xinv%*%X2T_Y
 View(b1_k)
+library(ggplot2)
+View(df2)
+View(df3)
+# Create relationship
+ml_m<-lm(sales~youtube+facebook+newspaper, data=df)
+print(ml_m)
+summary(ml_m)
