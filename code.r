@@ -25,5 +25,26 @@ summary()
 lm_Y<-ggplot(data=df, aes(x=youtube, y=sales))+ geom_point(color="red")+geom_smooth(method="lm")
 # visualizing the impact of newspaper ads on sales
 lm_N<-ggplot(data=df, aes(x=newspaper, y=sales))+geom_point(color="green")+geom_smooth(method="lm")
-
-
+# Computing multiple linear regression coefficients
+ls()
+View(df)
+library(dplyr)
+# remove sales in order to form X matrix
+df2<-select(df,-sales)
+View(df2)
+#X Converting the dataframe into the X matrix 
+X<-data.matrix(df2)
+View(df2)
+#Creating the Response Variable
+df3<-select(df, -facebook,-youtube,-newspaper)
+View(df3)
+#Creating the first column of ones
+ones<-rep (1, times=200)
+View(ones)
+#Converting the column into  a matrix
+Col1<-matrix(ones)
+View(Col1)
+# Creating the Dependent Variable
+X2<-cbind(Col1,X)
+View(X2)
+# Computing the Coefficients B1:BK
