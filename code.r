@@ -47,4 +47,13 @@ View(Col1)
 # Creating the Dependent Variable
 X2<-cbind(Col1,X)
 View(X2)
-# Computing the Coefficients B1:BK
+# OLS estimates- Coefficients B1:BK
+install.packages("matlib")
+# Accessing matlib for computational purposes
+library(matlib)
+# Computing X2 Transpose
+X2_T<-t(X2)
+View(X2_T)
+#Computing Xt times X
+X_new<-X2_T %*% X2
+View(X_new)
